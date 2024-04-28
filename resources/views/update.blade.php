@@ -23,9 +23,9 @@
                    
 
                 <label for="" class="form-label mt-4">Due Date</label>
-                <input type="date" name="duedate" class="form-control" value="{{ $todo->dueDate }}">
+                <input type="date" name="dueDate" class="form-control" value="{{ $todo->dueDate }}">
 
-                <input type="number" name="id" value="{{ $todo->id }} " hidden>
+                <input type="hidden" name="id" value="{{ $todo->id }} " >
         <button class="btn btn-primary mt-4" value="update">Update</button>
             </form>
         </div>

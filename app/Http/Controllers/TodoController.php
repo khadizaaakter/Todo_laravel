@@ -41,21 +41,23 @@ class TodoController extends Controller
     }
 
     public function updateData(Request $request){
+    
         $request->validate([
             'name'=>'required',
             'work'=>'required',
             'dueDate'=>'required'
         ]);
     
-        $id = $request->input('id'); 
+        $id = $request->id; 
     
         $todo = todos::find($id);
-        $todo->name = $request->input('name');
-        $todo->work = $request->input('work');
-        $todo->dueDate = $request->input('duedate');
+        $todo->name = $request->name;
+        $todo->work = $request->work;
+        $todo->dueDate = $request->dueDate;
         $todo->save();
     
         return redirect(route('todo.home'));
     }
     
 }
+ 
